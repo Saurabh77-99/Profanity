@@ -1,10 +1,15 @@
 import fs from "fs"
 import csv from 'csv-parser';
+import { Index } from "@upstash/vector"
 
 interface Row{
     text:string
 }
 
+const index = new Index({
+  url: "https://perfect-kitten-43261-eu1-vector.upstash.io",
+  token: "ABgFMHBlcmZlY3Qta2l0dGVuLTQzMjYxLWV1MWFkbWluTWpWbE5EUXlNell0TlRRMk55MDBZbVF6TFRsbU1ETXRNbUk0TURnM1l6SXdaV1F4",
+})
 //reading from the dataset
 async function parseCSV(filepath:string):Promise<Row[]> {
     return new Promise((resolve,reject)=>{
@@ -37,10 +42,11 @@ const seed = async () =>{
       const formatted = chunk.map((row,batchIndex)=>({
         data:row.text,
         id:i+batchIndex,
-        metadata:{text:row.text}
+        metadata:{text:row.text},
       }))
 
-      console.log("upsert",formatted);
+      // console.log("upsert",formatted);
+      await index.upsert(formatted);
       
     }
 }
