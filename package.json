@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy":"wrangler deploy --minify index.ts"
   },
   "keywords": [],
   "author": "",
@@ -11,11 +11,14 @@
   "dependencies": {
     "@upstash/vector": "^1.0.7",
     "csv-parser": "^3.0.0",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "hono": "^4.3.6",
+    "langchain": "^0.1.37"
   },
   "devDependencies": {
     "@types/node": "^20.12.11",
-    "tsx": "^4.10.2"
+    "tsx": "^4.10.2",
+    "wrangler": "^3.55.0"
   },
   "description": ""
 }

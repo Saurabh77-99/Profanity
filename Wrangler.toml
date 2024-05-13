@@ -1,0 +1,6 @@
+name = "profanitycheckapi"
+compatibility_date = "2024-05-13"
+
+[vars]
+VECTOR_URL = "https://perfect-kitten-43261-eu1-vector.upstash.io"
+VECTOR_TOKEN = "ABgFMHBlcmZlY3Qta2l0dGVuLTQzMjYxLWV1MWFkbWluTWpWbE5EUXlNell0TlRRMk55MDBZbVF6TFRsbU1ETXRNbUk0TURnM1l6SXdaV1F4"
